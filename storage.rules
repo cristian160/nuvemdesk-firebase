@@ -1,0 +1,26 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    match /usuarios/{uid}/arquivos/{arquivoId} {
+
+      function usuarioDono() {
+        return request.auth != null
+          && request.auth.uid == uid;
+      }
+
+      allow read: if usuarioDono();
+
+      allow create, update: if usuarioDono()
+        && request.resource.size <= 5 * 1024 * 1024
+        && request.resource.contentType in [
+          'image/png',
+          'image/jpeg',
+          'application/pdf'
+        ];
+
+      allow delete: if usuarioDono();
+    }
+  }
+}

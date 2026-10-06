@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuvemDesk | Central de Chamados</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header class="marca">
+        <div class="marca-icone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M7 18a5 5 0 1 1 1-9.9A7 7 0 0 1 21 11a3.5 3.5 0 0 1-1.5 7H7Z" />
+                <path d="m9 13 3-3 3 3M12 10v7" />
+            </svg>
+        </div>
+
+        <div>
+            <span class="marca-etiqueta">CENTRAL DE SUPORTE • GRUPO 2</span>
+            <h1>NuvemDesk</h1>
+            <p>Seus chamados organizados. Sua equipe conectada.</p>
+        </div>
+    </header>
+    <p id="sessao">Verificando sessão...</p>
+
+    <form id="formulario" hidden>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" autocomplete="username" placeholder="Seu e-mail" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" autocomplete="current-password" placeholder="Sua senha" minlength="6"
+            required>
+
+        <button type="submit">Entrar</button>
+        <button type="button" id="cadastrar">Criar conta</button>
+    </form>
+
+    <section id="area-logada" hidden>
+        <h2>Meus chamados</h2>
+
+        <form id="form-chamado">
+            <label for="titulo">Título</label>
+            <input id="titulo" type="text" maxlength="100" placeholder="Ex.: Computador não liga" required>
+
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" rows="4" maxlength="2000" placeholder="Descreva o problema" required></textarea>
+
+            <label for="status-chamado">Status</label>
+            <select id="status-chamado">
+                <option value="aberto">Aberto</option>
+                <option value="em_andamento">Em andamento</option>
+                <option value="concluido">Concluído</option>
+            </select>
+
+            <button type="submit" id="salvar-chamado">
+                Criar chamado
+            </button>
+
+            <button type="button" id="cancelar-edicao" hidden>
+                Cancelar edição
+            </button>
+        </form>
+
+        <p id="aviso-chamados" role="status"></p>
+
+        <h3>Chamados cadastrados</h3>
+        <div id="lista-chamados"></div>
+        <hr>
+
+        <h3>Meus arquivos — demonstração local</h3>
+
+        <p>Envie uma imagem PNG, JPG ou um PDF de até 5 MB.</p>
+
+        <input type="file" id="arquivo-upload" accept="image/png,image/jpeg,application/pdf">
+
+        <button type="button" id="enviar-arquivo">
+            Enviar arquivo
+        </button>
+
+        <button type="button" id="atualizar-arquivos">
+            Atualizar lista
+        </button>
+
+        <p id="mensagem-arquivos" role="status"></p>
+
+        <ul id="lista-arquivos"></ul>
+        <hr>
+        <button type="button" id="sair">Sair da conta</button>
+    </section>
+
+    <p id="mensagem" role="status" aria-live="polite"></p>
+
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
