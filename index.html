@@ -41,61 +41,55 @@
     </form>
 
     <section id="area-logada" hidden>
-        <h2>Meus chamados</h2>
-
-        <form id="form-chamado">
-            <label for="titulo">Título</label>
-            <input id="titulo" type="text" maxlength="100" placeholder="Ex.: Computador não liga" required>
-
-            <label for="descricao">Descrição</label>
-            <textarea id="descricao" rows="4" maxlength="2000" placeholder="Descreva o problema" required></textarea>
-
-            <label for="status-chamado">Status</label>
-            <select id="status-chamado">
-                <option value="aberto">Aberto</option>
+        <div class="cabecalho-painel">
+            <h2>Meus chamados</h2>
+            <button type="button" id="sair">Sair da conta</button>
+        </div>
+        <div id="painel-chamados">
+            <div class="resumo" aria-label="Quantidade total de chamados por status">
+                <div><span>Abertos</span><strong id="total-aberto">0</strong></div>
+                <div><span>Em andamento</span><strong id="total-em_andamento">0</strong></div>
+                <div><span>Concluídos</span><strong id="total-concluido">0</strong></div>
+            </div>
+            <h3>Criar ou editar chamado</h3>
+            <form id="form-chamado">
+                <label for="titulo">Título</label>
+                <input id="titulo" type="text" maxlength="100" placeholder="Ex.: Computador sem internet" required>
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" rows="4" maxlength="2000" placeholder="Descreva o problema" required></textarea>
+                <label for="status-chamado">Status</label>
+                <select id="status-chamado" disabled aria-describedby="ajuda-status">
+                    <option value="aberto">Aberto</option>
+                    <option value="em_andamento">Em andamento</option>
+                    <option value="concluido">Concluído</option>
+                </select>
+                <p id="ajuda-status">Novos chamados começam abertos. Para mudar o status, edite o chamado após criá-lo.</p>
+                <button type="submit" id="salvar-chamado">Criar chamado</button>
+                <button type="button" id="cancelar-edicao" hidden>Cancelar edição</button>
+            </form>
+            <p id="aviso-chamados" role="status" aria-live="polite"></p>
+            <hr>
+            <h3>Chamados cadastrados</h3>
+            <label for="filtro-status">Filtrar por status</label>
+            <select id="filtro-status">
+                <option value="todos">Todos</option>
+                <option value="aberto">Abertos</option>
                 <option value="em_andamento">Em andamento</option>
-                <option value="concluido">Concluído</option>
+                <option value="concluido">Concluídos</option>
             </select>
-
-            <button type="submit" id="salvar-chamado">
-                Criar chamado
-            </button>
-
-            <button type="button" id="cancelar-edicao" hidden>
-                Cancelar edição
-            </button>
-        </form>
-
-        <p id="aviso-chamados" role="status"></p>
-
-        <h3>Chamados cadastrados</h3>
-        <div id="lista-chamados"></div>
-        <hr>
-
-        <h3>Meus arquivos — demonstração local</h3>
-
-        <p>Envie uma imagem PNG, JPG ou um PDF de até 5 MB.</p>
-
-        <input type="file" id="arquivo-upload" accept="image/png,image/jpeg,application/pdf">
-
-        <button type="button" id="enviar-arquivo">
-            Enviar arquivo
-        </button>
-
-        <button type="button" id="atualizar-arquivos">
-            Atualizar lista
-        </button>
-
-        <p id="mensagem-arquivos" role="status"></p>
-
-        <ul id="lista-arquivos"></ul>
-        <hr>
-        <button type="button" id="sair">Sair da conta</button>
+            <button type="button" id="atualizar-chamados">Atualizar lista</button>
+            <div id="lista-chamados"></div>
+        </div>
     </section>
+
+    <noscript>Ative o JavaScript para acessar sua conta.</noscript>
 
     <p id="mensagem" role="status" aria-live="polite"></p>
 
-    <script type="module" src="./script.js"></script>
+    <script defer src="./vendor/parse-8.7.0.min.js"></script>
+    <script defer src="./config.js"></script>
+    <script defer src="./chamados.js"></script>
+    <script defer src="./script.js"></script>
 </body>
 
 </html>

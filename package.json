@@ -1,0 +1,13 @@
+{
+  "name": "nuvemdesk-back4app",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/cloud.test.cjs tests/painel.test.cjs",
+    "test:browser": "node --test tests/auth.test.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "playwright": "1.62.1"
+  }
+}
