@@ -1,0 +1,91 @@
+{
+  "testes": [
+    {
+      "teste": "Cadastro temporário a",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Cadastro temporário b",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Criar chamado autenticado",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Persistência e normalização",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Servidor impõe ACL privada",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Conta B não lê chamado de A",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Conta B não encontra chamado na busca",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Conta B não altera chamado de A",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Conta B não exclui chamado de A",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Leitura anônima bloqueada",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Criação anônima bloqueada",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Transferência de proprietário bloqueada",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Validação de titulo",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Validação de descricao",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Validação de status",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Edição pelo proprietário",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Edição persistida e proprietário preservado",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Exclusão pelo proprietário",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "Exclusão persistida",
+      "resultado": "PASSOU"
+    }
+  ],
+  "limpeza": [
+    {
+      "tipo": "conta temporária",
+      "removido": true
+    },
+    {
+      "tipo": "conta temporária",
+      "removido": true
+    }
+  ],
+  "escopo": "API real, somente dados temporários; sem teste visual do navegador"
+}

@@ -1,0 +1,25 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> nuvemdesk-back4app@0.2.0 test
+> node --test tests/cloud.test.cjs tests/painel.test.cjs
+
+✔ cria chamado aberto, normaliza textos e impõe ACL privada (3.265273ms)
+✔ recusa criação e exclusão anônimas (0.810506ms)
+✔ recusa proprietário forjado na criação (0.665016ms)
+✔ recusa alteração por outra conta e transferência de propriedade (0.395347ms)
+✔ dono pode editar nos três status e ACL permanece privada (0.42446ms)
+✔ valida limites e tipos de título e descrição (0.582947ms)
+✔ recusa status inicial indevido, status inválido e campo extra (0.617676ms)
+✔ exclusão permitida apenas ao proprietário autenticado (0.268684ms)
+✔ painel cria, edita, filtra, conta e exclui com confirmação (301.834257ms)
+✔ texto é renderizado sem interpretar HTML e logout limpa painel (126.311864ms)
+✔ falha de gravação mantém formulário e não declara sucesso (54.642961ms)
+✔ falha ao reler após gravação informa que o chamado foi salvo (75.034923ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1334.628487
