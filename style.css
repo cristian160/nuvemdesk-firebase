@@ -85,6 +85,148 @@ a {
 }
 
 /* Área de autenticação e painel principal */
+.tutorial {
+    margin-block: 0 24px;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background: var(--painel);
+    overflow: hidden;
+}
+
+.tutorial > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 72px;
+    padding: 18px 24px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.tutorial > summary::-webkit-details-marker {
+    display: none;
+}
+
+.tutorial > summary:hover {
+    background: #1b2b45;
+}
+
+.tutorial > summary:focus-visible {
+    outline: 3px solid #9bc5ff;
+    outline-offset: -4px;
+}
+
+.tutorial-titulo,
+.tutorial-resumo {
+    display: block;
+}
+
+.tutorial-titulo {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.tutorial-resumo {
+    margin-top: 3px;
+    color: var(--secundario);
+}
+
+.tutorial-icone {
+    flex-shrink: 0;
+    color: #9bc5ff;
+    transition: transform 150ms;
+}
+
+.tutorial[open] > summary {
+    border-bottom: 1px solid var(--borda);
+}
+
+.tutorial[open] .tutorial-icone {
+    transform: rotate(180deg);
+}
+
+.tutorial-conteudo {
+    padding: 24px;
+}
+
+.tutorial-conteudo h2 {
+    margin: 0 0 8px;
+    font-size: 1.35rem;
+}
+
+.tutorial-conteudo > p:first-of-type {
+    margin: 0 0 20px;
+}
+
+.tutorial-passos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: tutorial-passo;
+}
+
+.tutorial-passos > li {
+    position: relative;
+    min-width: 0;
+    padding: 20px 20px 20px 64px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: var(--campo);
+    counter-increment: tutorial-passo;
+}
+
+.tutorial-passos > li::before {
+    content: counter(tutorial-passo);
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #20314c;
+    color: #b7d4ff;
+    font-weight: 700;
+}
+
+.tutorial-passos h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+}
+
+.tutorial-passos p {
+    margin: 0;
+}
+
+.tutorial-passos strong,
+.tutorial-dica strong {
+    color: var(--texto);
+}
+
+.tutorial-dica {
+    margin: 20px 0 0;
+    padding: 14px 16px;
+    border-left: 3px solid #74aaff;
+    border-radius: 6px;
+    background: #192b46;
+}
+
+@media (max-width: 600px) {
+    .tutorial > summary,
+    .tutorial-conteudo {
+        padding: 16px;
+    }
+
+    .tutorial-passos {
+        grid-template-columns: 1fr;
+    }
+}
+
 #formulario,
 #area-logada {
     padding: clamp(20px, 4vw, 36px);
